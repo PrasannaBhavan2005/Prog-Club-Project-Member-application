@@ -12,8 +12,7 @@ and dangling pointers.
 # Question 2
 So I am going to explain that ghow the definition.hpp file works
 
-'''
-
+```
 #pragma once
 
 #include <blockingconcurrentqueue.h>
@@ -44,4 +43,4 @@ public:
     }
 };
 
-'''
+```
