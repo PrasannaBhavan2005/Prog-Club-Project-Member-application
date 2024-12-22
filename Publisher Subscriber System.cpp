@@ -129,18 +129,18 @@ int main() {
     auto freeSubscriber = std::make_shared<FreeSubscriber>(1); // creates a free subscriber(id=1) and paid subscriber (id=2)
     auto paidSubscriber = std::make_shared<PaidSubscriber>(2);
 
-    // Example: Update and subscribe
+    // example: update and subscribe
     equityPublisher->update_data(100, 123.45, 10000);
     bondPublisher->update_data(1100, 98.76, 3.5); // a sample example 
 
     freeSubscriber->subscribe(equityPublisher, 100);
     paidSubscriber->subscribe(bondPublisher, 1100);
 
-    // Example: Get data
+    // example: Get data
     std::cout << freeSubscriber->get_data(equityPublisher, 100) << std::endl;
     std::cout << paidSubscriber->get_data(bondPublisher, 1100) << std::endl;
 
-    // Exceeding free subscriber limit
+    // exceeding free subscriber limit
     for (int i = 0; i < 101; ++i) {
         std::cout << freeSubscriber->get_data(equityPublisher, 100) << std::endl; // prints data for both subscribers
     }
