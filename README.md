@@ -13,6 +13,7 @@ and dangling pointers.
 So I am going to explain that ghow the definition.hpp file works
 
 '''
+
 #pragma once
 
 #include <blockingconcurrentqueue.h>
@@ -42,4 +43,5 @@ public:
         return mpmcQueue.wait_dequeue(u);
     }
 };
+
 '''
