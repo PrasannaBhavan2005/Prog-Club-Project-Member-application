@@ -60,16 +60,13 @@ to suppress TSAN warnings for specific methods.
 
 ```
 __attribute__((no_sanitize("thread"))) bool enqueue(const T& t);
-
 ```
 It adds an element to the queue by copying it, and it returns true if 
 the element was successfully added. And TSAN suppression suppresses thread
 sanitizer warnings for this method.
-
 ```
 template <typename U>
 __attribute__((no_sanitize("thread"))) void wait_dequeue(U& u);
-
 ```
 It waits for an element to become available in the queue and removes it,
 storing the result in u. Here the input is a reference 'u' where the dequed
